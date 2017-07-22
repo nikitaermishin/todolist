@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Todo</title>
+        <link rel="stylesheet" type="text/css" href="style/main.css">
+	    <link rel="stylesheet" href="material/material.min.css">
+		<script src="material/material.min.js"></script>
+    </head>
+    <body class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		  <header class="mdl-layout__header">
+		    <div class="mdl-layout__header-row">
+		      <!-- Title -->
+		      <span class="mdl-layout-title">Todo</span>
+		      <!-- Add spacer, to align navigation to the right -->
+		      <div class="mdl-layout-spacer"></div>
+			      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+			      	<label class="mdl-button mdl-js-button mdl-button--icon" id="clear-button" style="display: none;">
+			          <i class="material-icons">clear</i>
+			        </label>
+			        <label class="mdl-button mdl-js-button mdl-button--icon" id="search-button" for="fixed-header-drawer-exp">
+			          <i class="material-icons">search</i>
+			        </label>
+			        <div class="mdl-textfield__expandable-holder">
+			          <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+			        </div>
+			      </div>
+		    </div>
+		  </header>
+		  <div class="mdl-layout__drawer">
+		    <span class="mdl-layout-title">Title</span>
+		    <nav class="mdl-navigation">
+		      <a class="mdl-navigation__link" href="">Link</a>
+		      <a class="mdl-navigation__link" href="">Link</a>
+		      <a class="mdl-navigation__link" href="">Link</a>
+		      <a class="mdl-navigation__link" href="">Link</a>
+		    </nav>
+		  </div>
+		  <main class="mdl-layout__content">
+		    <div class="page-main">
+				<div class="mdl-layout__tab-panel is-active" id="overview">
+					<div id="task-list">
+						<!--<section class="task section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+							<h4 class="task__name">task 2</h4>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect task__label" for="checkbox-2">
+			  					<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input task__checkbox">
+							</label>
+						</section>
+						<section class="task section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+							<h4 class="task__name">task 3</h4>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect task__label" for="checkbox-3">
+			  					<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input task__checkbox">
+							</label>
+						</section>-->
+					</div>
+			    	<button id="add-button" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+					  <i class="material-icons">add</i>
+					</button>
+				</div>
+		    </div>
+		    <div class="page-settings">
+				<h2>Add new task</h2>
+				<form action="#">
+				  <div class="mdl-textfield mdl-js-textfield">
+				    <input class="mdl-textfield__input" type="text" id="name-input">
+				    <label class="mdl-textfield__label" for="name-input">Name...</label>
+				  </div>
+				</form>
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="add-task-button">
+				  <i class="material-icons">add</i>
+				</button>
+		    </div>
+		  </main>
+		</div>
+		
+		<script src="script/jquery-3.2.1.min.js"></script>
+		<script src="script/vue.js"></script>
+		<script src="script/main.js"></script>
+	    <script type="text/javascript" src="cordova.js"></script>
+	</body>
+</html>
