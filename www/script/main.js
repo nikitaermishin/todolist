@@ -3,20 +3,22 @@ $(document).ready(function() {
 	var taskArr = [];
 
 	$('#search-button').css('display', 'none');
-	$('#add-button').click(enableSettings);
+	$('#add-button').click(enableAddMenu);
 	$('#clear-button').click(enableMain);
 	$('#add-task-button').click(addTask);
 
-	function enableSettings() {
+	function enableAddMenu() {
 		$('.page-main').css('display', 'none');
-		$('.page-settings').css('display', 'flex');
+		$('.page-addMenu').css('display', 'flex');
+		$('.mdl-layout-title').html('Add new task');
 		//$('#search-button').css('display', 'none');
 		$('#clear-button').css('display', 'block');
 	}
 
 	function enableMain() {
-		$('.page-settings').css('display', 'none');
+		$('.page-addMenu').css('display', 'none');
 		$('.page-main').css('display', 'block');
+		$('.mdl-layout-title').html('Todo');
 		$('#clear-button').css('display', 'none');
 		//$('#search-button').css('display', 'block');
 	}

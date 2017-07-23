@@ -30,12 +30,10 @@
 		    </div>
 		  </header>
 		  <div class="mdl-layout__drawer">
-		    <span class="mdl-layout-title">Title</span>
+		    <span class="mdl-layout-title">Todo</span>
 		    <nav class="mdl-navigation">
-		      <a class="mdl-navigation__link" href="">Link</a>
-		      <a class="mdl-navigation__link" href="">Link</a>
-		      <a class="mdl-navigation__link" href="">Link</a>
-		      <a class="mdl-navigation__link" href="">Link</a>
+		      <a class="mdl-navigation__link" onclick="enableMain()">Main</a>
+		      <a class="mdl-navigation__link" onclick="enableAddMenu()">Add new task</a>
 		    </nav>
 		  </div>
 		  <main class="mdl-layout__content">
@@ -60,8 +58,8 @@
 					</button>
 				</div>
 		    </div>
-		    <div class="page-settings">
-				<h2>Add new task</h2>
+		    <div class="page-addMenu">
+				<!-- <h2>Add new task</h2> -->
 				<form action="#">
 				  <div class="mdl-textfield mdl-js-textfield">
 				    <input class="mdl-textfield__input" type="text" id="name-input">
