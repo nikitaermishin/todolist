@@ -32,14 +32,14 @@
 		  <div class="mdl-layout__drawer">
 		    <span class="mdl-layout-title">Todo</span>
 		    <nav class="mdl-navigation">
-		      <a class="mdl-navigation__link" onclick="enableMain()">Main</a>
-		      <a class="mdl-navigation__link" onclick="enableAddMenu()">Add new task</a>
+		      <a class="mdl-navigation__link" id="main-button" onclick="enableMain()">Main</a>
+		      <a class="mdl-navigation__link" id="addMenu-button" onclick="enableAddMenu()">Add new task</a>
 		    </nav>
 		  </div>
 		  <main class="mdl-layout__content">
 		    <div class="page-main">
 				<div class="mdl-layout__tab-panel is-active" id="overview">
-					<div id="task-list">
+					<ul id="task-list">
 						<!--<section class="task section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
 							<h4 class="task__name">task 2</h4>
 							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect task__label" for="checkbox-2">
@@ -52,28 +52,42 @@
 			  					<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input task__checkbox">
 							</label>
 						</section>-->
-					</div>
+					</ul>
 			    	<button id="add-button" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
 					  <i class="material-icons">add</i>
 					</button>
 				</div>
 		    </div>
 		    <div class="page-addMenu">
-				<!-- <h2>Add new task</h2> -->
-				<form action="#">
-				  <div class="mdl-textfield mdl-js-textfield">
-				    <input class="mdl-textfield__input" type="text" id="name-input">
-				    <label class="mdl-textfield__label" for="name-input">Name...</label>
-				  </div>
-				</form>
-				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="add-task-button">
-				  <i class="material-icons">add</i>
-				</button>
+
+		    	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp add-task-section">
+					<!-- <h2>Add new task</h2> -->
+					<form action="#">
+					<!-- <span>task name</span> -->
+					  <div class="mdl-textfield mdl-js-textfield">
+					    <input class="mdl-textfield__input" type="text" id="name-input">
+					    <label class="mdl-textfield__label" for="name-input">Task name...</label>
+					  </div>
+					</form>
+					<div class="add-task-part">
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-urgent">
+						  <input type="checkbox" id="checkbox-urgent" class="mdl-checkbox__input">
+						  <span class="mdl-checkbox__label">Urgent</span>
+						</label>
+						<!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"> 
+						  <i class="material-icons">add</i>
+						</button>-->
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="add-task-button">
+						  Add task
+						</button>
+					</div>	
+				</section>	
 		    </div>
 		  </main>
 		</div>
 		
 		<script src="script/jquery-3.2.1.min.js"></script>
+		<script src="script/jquery-ui.min.js"></script>
 		<script src="script/vue.js"></script>
 		<script src="script/main.js"></script>
 	    <script type="text/javascript" src="cordova.js"></script>

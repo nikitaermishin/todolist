@@ -6,6 +6,9 @@ $(document).ready(function() {
 	$('#add-button').click(enableAddMenu);
 	$('#clear-button').click(enableMain);
 	$('#add-task-button').click(addTask);
+	$('#addMenu-button').click(enableAddMenu);
+	$('#main-button').click(enableMain);
+	$('#task-list').sortable();
 
 	function enableAddMenu() {
 		$('.page-main').css('display', 'none');
@@ -25,8 +28,13 @@ $(document).ready(function() {
 
 	function addTask() {
 		var name = $('#name-input').val();
-		var elemContent = '<section class="task section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp"><h4 class="task__name">' + name + '</h4><label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect task__label mdl-js-ripple-effect--ignore-events is-upgraded" for="checkbox-' + count + '" data-upgraded=",MaterialCheckbox,MaterialRipple"><input type="checkbox" id="checkbox-' + count + '" class="mdl-checkbox__input task__checkbox"><span class="mdl-checkbox__focus-helper"></span><span class="mdl-checkbox__box-outline"><span class="mdl-checkbox__tick-outline"></span></span><span class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label></section>';//
-		$(elemContent).appendTo('#task-list');
+		var urgent = $('#checkbox-urgent:checked').length;
+		var elemContent = '<li><section class="task section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp"><div class="task__titleWrapper"><h4 class="task__name">' + name + '</h4>' + (urgent ? '<span class="mdl-chip"><span class="mdl-chip__text">urgent</span></span>' : '') + '</div><label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect task__label mdl-js-ripple-effect--ignore-events is-upgraded" for="checkbox-' + count + '" data-upgraded=",MaterialCheckbox,MaterialRipple"><input type="checkbox" id="checkbox-' + count + '" class="mdl-checkbox__input task__checkbox"><span class="mdl-checkbox__focus-helper"></span><span class="mdl-checkbox__box-outline"><span class="mdl-checkbox__tick-outline"></span></span><span class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label></section></li>';//
+		if (urgent) {
+			$(elemContent).prependTo('#task-list');
+		} else {
+			$(elemContent).appendTo('#task-list');
+		}
 		$('.mdl-checkbox__ripple-container.mdl-js-ripple-effect.mdl-ripple--center').click(function() {
 			$(this).parent().toggleClass('is-checked');
 		});
